@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In | Z83 SmartApply</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="modal" id="loginModal" style="display: flex;">
+
+        <div class="modal-content">
+
+            <a class="close-btn" href="index.html">&times;</a>
+
+            <div class="modal-logo">
+                Z83 <span>SmartApply</span>
+            </div>
+
+            <h2 id="formTitle">Welcome Back</h2>
+
+            <p id="formText">
+                Sign in to continue your application.
+            </p>
+
+            <form id="loginForm">
+
+                <label for="email">Email Address</label>
+
+                <input type="email"
+                       id="email"
+                       placeholder="Enter your email"
+                       required>
+
+                <label for="password">Password</label>
+
+                <input type="password"
+                       id="password"
+                       placeholder="Enter your password"
+                       required>
+
+                <button type="submit" class="primary-btn full-width">
+                    Sign In
+                </button>
+
+            </form>
+
+            <form id="signupForm" class="hidden">
+
+                <label for="fullName">Full Name</label>
+
+                <input type="text"
+                       id="fullName"
+                       placeholder="Enter your full name"
+                       required>
+
+                <label for="signupEmail">Email Address</label>
+
+                <input type="email"
+                       id="signupEmail"
+                       placeholder="Enter your email"
+                       required>
+
+                <label for="signupPassword">Password</label>
+
+                <input type="password"
+                       id="signupPassword"
+                       placeholder="Create a password"
+                       required>
+
+                <button type="submit" class="primary-btn full-width">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p class="register-text" id="signupLink">
+                Don't have an account?
+                <a href="#" onclick="createAccount()">Create one</a>
+            </p>
+
+            <p class="register-text hidden" id="loginLink">
+                Already have an account?
+                <a href="#" onclick="showLogin()">Sign in</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="jsapp.js"></script>
+</body>
+</html>

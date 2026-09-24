@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editable Z83 Application for Employment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="z83-overlay-page">
+    <header class="navbar no-print">
+        <div class="logo"><span>Z83</span> SmartApply</div>
+        <nav><button class="login-btn" type="button" onclick="window.location.href='profile.html'">Edit Profile</button></nav>
+    </header>
+    <section class="z83-loader no-print">
+        <p class="section-label">Z83 APPLICATION BUILDER</p>
+        <h1>Paste the job advert</h1>
+        <textarea id="jobAdvert" rows="8" placeholder="Paste the complete government job advert here..."></textarea>
+        <div class="z83-actions">
+            <button class="primary-btn" id="loadZ83Btn" type="button">Load on Z83</button>
+            <button class="secondary-btn" type="button" onclick="window.print()">Print / Save as PDF</button>
+        </div>
+        <p id="z83Message" class="save-message" aria-live="polite"></p>
+    </section>
+
+    <!-- =========================
+         PAGE 1
+    ========================== -->
+
+    <div class="page page1">
+
+        <!-- SECTION A -->
+
+        <input
+            class="field"
+            type="text"
+            name="position" id="position"
+            style="left:39%; top:13.9%; width:26.4%; height:5.5%;"
+        >
+
+        <input
+            class="field"
+            type="text"
+            name="department" id="department"
+            style="left:66.1%; top:13.9%; width:27.9%; height:5.5%;"
+        >
+
+        <input
+            class="field"
+            type="text"
+            name="reference" id="referenceNumber"
+            style="left:39%; top:19.5%; width:26.4%; height:7%;"
+        >
+
+        <input
+            class="field"
+            type="text"
+            name="notice"
+            style="left:66.1%; top:19.5%; width:27.9%; height:7%;"
+        >
+
+
+        <!-- =========================
+             PERSONAL INFORMATION
+        ========================== -->
+
+        <input
+            class="field"
+            type="text"
+            name="surname_full_names" id="z83FullName"
+            style="left:44%; top:30.4%; width:49.8%; height:3.2%;"
+        >
+
+        <input
+            class="field"
+            type="text"
+            name="dob" id="z83DateOfBirth"
+            placeholder="DD/MM/YY"
+            style="left:33%; top:34%; width:11%; height:4%;"
+        >
+
+        <input
+            class="field"
+            type="text"
+            name="id_number" id="z83IdNumber"
+            style="left:55.8%; top:33.9%; width:38%; height:4.2%;"
+        >
+
+        <input
+            class="field"
+            type="text"
+            name="passport_number"
+            style="left:55.8%; top:37.2%; width:38%; height:4%;"
+        >
+
+        <!-- Nationality -->
+
+        <input
+            class="field"
+            type="text"
+            name="nationality"
+            style="left:44%; top:45.8%; width:50%; height:3%;"
+        >
+
+
+        <!-- =========================
+             RACE
+        ========================== -->
+
+        <input class="check" type="checkbox"
+               name="race_african"
+               style="left:55.2%; top:39%;">
+
+        <input class="check" type="checkbox"
+               name="race_white"
+               style="left:64%; top:39%;">
+
+        <input class="check" type="checkbox"
+               name="race_coloured"
+               style="left:74.1%; top:39%;">
+
+        <input class="check" type="checkbox"
+               name="race_indian"
+               style="left:84.5%; top:39%;">
+
+        <input class="check" type="checkbox"
+               name="race_other"
+               style="left:94%; top:39%;">
+
+
+        <!-- Gender -->
+
+        <input class="check" type="checkbox"
+               name="gender_female"
+               style="left:84.6%; top:40.9%;">
+
+        <input class="check" type="checkbox"
+               name="gender_male"
+               style="left:94%; top:40.9%;">
+
+
+        <!-- Disability -->
+
+        <input class="check" type="checkbox"
+               name="disability_yes"
+               style="left:84.6%; top:43.1%;">
+
+        <input class="check" type="checkbox"
+               name="disability_no"
+               style="left:94%; top:43.1%;">
+
+
+        <!-- Citizenship -->
+
+        <input class="check" type="checkbox"
+               name="citizen_yes"
+               style="left:84.6%; top:45%;">
+
+        <input class="check" type="checkbox"
+               name="citizen_no"
+               style="left:94%; top:45%;">
+
+
+        <!-- Work Permit -->
+
+        <input class="check" type="checkbox"
+               name="workpermit_yes"
+               style="left:84.6%; top:49%;">
+
+        <input class="check" type="checkbox"
+               name="workpermit_no"
+               style="left:94%; top:49%;">
+
+
+        <!-- Criminal Record -->
+
+        <input class="check" type="checkbox"
+               name="criminal_yes"
+               style="left:84.6%; top:51.1%;">
+
+        <input class="check" type="checkbox"
+               name="criminal_no"
+               style="left:94%; top:51.1%;">
+
+        <input
+            class="field"
+            type="text"
+            name="criminal_details"
+            style="left:39%; top:52.4%; width:55%; height:3.5%;"
+        >
+
+
+        <!-- Pending Criminal Case -->
+
+        <input class="check" type="checkbox"
+               name="pending_criminal_yes"
+               style="left:84.6%; top:55%;">
+
+        <input class="check" type="checkbox"
+               name="pending_criminal_no"
+               style="left:94%; top:55%;">
+
+        <input
+            class="field"
+            type="text"
+            name="pending_criminal_details"
+            style="left:39%; top:56.6%; width:55%; height:3.2%;"
+        >
+
+
+        <!-- Dismissed for Misconduct -->
+
+        <input class="check" type="checkbox"
+               name="dismissed_yes"
+               style="left:84.6%; top:59.1%;">
+
+        <input class="check" type="checkbox"
+               name="dismissed_no"
+               style="left:94%; top:59.1%;">
+
+        <input
+            class="field"
+            type="text"
+            name="dismissed_details"
+            style="left:39%; top:62%; width:55%; height:3%;"
+        >
+
+
+        <!-- Pending Disciplinary -->
+
+        <input class="check" type="checkbox"
+               name="disciplinary_yes"
+               style="left:84.6%; top:65%;">
+
+        <input class="check" type="checkbox"
+               name="disciplinary_no"
+               style="left:94%; top:65%;">
+
+        <input
+            class="field"
+            type="text"
+            name="disciplinary_details"
+            style="left:39%; top:67.4%; width:55%; height:3%;"
+        >
+
+
+        <!-- Resigned Pending Disciplinary -->
+
+        <input class="check" type="checkbox"
+               name="resigned_yes"
+               style="left:84.6%; top:70.1%;">
+
+        <input class="check" type="checkbox"
+               name="resigned_no"
+               style="left:94%; top:70.1%;">
+
+
+        <!-- Ill Health / Retirement -->
+
+        <input class="check" type="checkbox"
+               name="retired_yes"
+               style="left:84.6%; top:75%;">
+
+        <input class="check" type="checkbox"
+               name="retired_no"
+               style="left:94%; top:75%;">
+
+
+        <!-- State Business -->
+
+        <input class="check" type="checkbox"
+               name="state_business_yes"
+               style="left:84.6%; top:79%;">
+
+        <input class="check" type="checkbox"
+               name="state_business_no"
+               style="left:94%; top:79%;">
+
+        <input
+            class="field"
+            type="text"
+            name="business_details"
+            style="left:39%; top:75.9%; width:55%; height:3.5%;"
+        >
+
+
+        <!-- Relinquish Business Interests -->
+
+        <input class="check" type="checkbox"
+               name="relinquish_yes"
+               style="left:84.6%; top:83.1%;">
+
+        <input class="check" type="checkbox"
+               name="relinquish_no"
+               style="left:94%; top:83.1%;">
+
+
+        <!-- Experience -->
+
+        <input
+            class="field"
+            type="text"
+            name="private_sector_years"
+            style="left:78%; top:86.2%; width:8%; height:3%;"
+        >
+
+        <input
+            class="field"
+            type="text"
+            name="public_sector_years"
+            style="left:87%; top:86.2%; width:7%; height:3%;"
+        >
+
+
+        <!-- Registration -->
+
+        <input
+            class="field"
+            type="text"
+            name="registration_date"
+            style="left:78%; top:89.8%; width:8%; height:3%;"
+        >
+
+        <input
+            class="field"
+            type="text"
+            name="registration_number"
+            style="left:87%; top:89.8%; width:7%; height:3%;"
+        >
+
+
+        <!-- Initial -->
+
+        <input
+            class="field"
+            type="text"
+            name="initial_page1"
+            style="left:84%; top:96.1%; width:12%; height:2.5%;"
+        >
+
+    </div>
+
+
+    <!-- =========================
+         PAGE 2
+    ========================== -->
+
+    <div class="page page2">
+
+        <!-- Contact -->
+
+        <input
+            class="field"
+            type="text"
+            name="preferred_language" id="z83Language"
+            style="left:39%; top:7.2%; width:54.8%; height:3%;"
+        >
+
+        <input
+            class="field"
+            type="text"
+            name="contact_details" id="z83Email"
+            style="left:40%; top:12%; width:53.5%; height:6%;"
+        >
+
+
+        <!-- Correspondence Method -->
+
+        <input class="check"
+               type="checkbox"
+               name="post"
+               style="left:61.5%; top:10.8%;">
+
+        <input class="check"
+               type="checkbox"
+               name="email"
+               style="left:72%; top:10.8%;">
+
+        <input class="check"
+               type="checkbox"
+               name="fax"
+               style="left:83%; top:10.8%;">
+
+        <input class="check"
+               type="checkbox"
+               name="tel"
+               style="left:94%; top:10.8%;">
+
+
+        <!-- =========================
+             LANGUAGE PROFICIENCY
+        ========================== -->
+
+        <input class="field" type="text"
+               name="language1"
+               style="left:34%; top:23.4%; width:11.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="language1_speak"
+               placeholder="Good / Fair / Poor"
+               style="left:46%; top:23.4%; width:11.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="language1_read"
+               placeholder="Good / Fair / Poor"
+               style="left:58%; top:23.4%; width:11.5%; height:3.2%;">
+
+
+        <input class="field" type="text"
+               name="language2"
+               style="left:34%; top:26.8%; width:11.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="language2_speak"
+               placeholder="Good / Fair / Poor"
+               style="left:46%; top:26.8%; width:11.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="language2_read"
+               placeholder="Good / Fair / Poor"
+               style="left:58%; top:26.8%; width:11.5%; height:3.2%;">
+
+
+        <input class="field" type="text"
+               name="language3"
+               style="left:34%; top:30.2%; width:11.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="language3_speak"
+               placeholder="Good / Fair / Poor"
+               style="left:46%; top:30.2%; width:11.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="language3_read"
+               placeholder="Good / Fair / Poor"
+               style="left:58%; top:30.2%; width:11.5%; height:3.2%;">
+
+
+        <input class="field" type="text"
+               name="language4"
+               style="left:34%; top:33.6%; width:11.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="language4_speak"
+               placeholder="Good / Fair / Poor"
+               style="left:46%; top:33.6%; width:11.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="language4_read"
+               placeholder="Good / Fair / Poor"
+               style="left:58%; top:33.6%; width:11.5%; height:3.2%;">
+
+
+        <!-- =========================
+             QUALIFICATIONS
+        ========================== -->
+
+        <input class="field" type="text"
+               name="school_1"
+               style="left:13.5%; top:39.7%; width:30%; height:3%;">
+
+        <input class="field" type="text"
+               name="qualification_1"
+               style="left:43.8%; top:39.7%; width:30%; height:3%;">
+
+        <input class="field" type="text"
+               name="qualification_year_1"
+               style="left:74%; top:39.7%; width:20%; height:3%;">
+
+
+        <input class="field" type="text"
+               name="school_2"
+               style="left:13.5%; top:43.1%; width:30%; height:3%;">
+
+        <input class="field" type="text"
+               name="qualification_2"
+               style="left:43.8%; top:43.1%; width:30%; height:3%;">
+
+        <input class="field" type="text"
+               name="qualification_year_2"
+               style="left:74%; top:43.1%; width:20%; height:3%;">
+
+
+        <input class="field" type="text"
+               name="school_3"
+               style="left:13.5%; top:46.5%; width:30%; height:3%;">
+
+        <input class="field" type="text"
+               name="qualification_3"
+               style="left:43.8%; top:46.5%; width:30%; height:3%;">
+
+        <input class="field" type="text"
+               name="qualification_year_3"
+               style="left:74%; top:46.5%; width:20%; height:3%;">
+
+
+        <input class="field" type="text"
+               name="school_4"
+               style="left:13.5%; top:49.9%; width:30%; height:3%;">
+
+        <input class="field" type="text"
+               name="qualification_4"
+               style="left:43.8%; top:49.9%; width:30%; height:3%;">
+
+        <input class="field" type="text"
+               name="qualification_year_4"
+               style="left:74%; top:49.9%; width:20%; height:3%;">
+
+
+        <input class="field" type="text"
+               name="current_study"
+               style="left:13.5%; top:54.1%; width:80.5%; height:3%;">
+
+
+        <!-- =========================
+             WORK EXPERIENCE
+        ========================== -->
+
+        <!-- Row 1 -->
+
+        <input class="field" type="text"
+               name="employer_1"
+               style="left:13.5%; top:60.4%; width:22%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="post_1"
+               style="left:35.8%; top:60.4%; width:14.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="from_mm_1"
+               style="left:51%; top:60.4%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="from_yy_1"
+               style="left:56.1%; top:60.4%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="to_mm_1"
+               style="left:61.8%; top:60.4%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="to_yy_1"
+               style="left:66.9%; top:60.4%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="reason_1"
+               style="left:72.1%; top:60.4%; width:21.8%; height:3.2%;">
+
+
+        <!-- Row 2 -->
+
+        <input class="field" type="text"
+               name="employer_2"
+               style="left:13.5%; top:64.8%; width:22%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="post_2"
+               style="left:35.8%; top:64.8%; width:14.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="from_mm_2"
+               style="left:51%; top:64.8%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="from_yy_2"
+               style="left:56.1%; top:64.8%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="to_mm_2"
+               style="left:61.8%; top:64.8%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="to_yy_2"
+               style="left:66.9%; top:64.8%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="reason_2"
+               style="left:72.1%; top:64.8%; width:21.8%; height:3.2%;">
+
+
+        <!-- Row 3 -->
+
+        <input class="field" type="text"
+               name="employer_3"
+               style="left:13.5%; top:69.2%; width:22%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="post_3"
+               style="left:35.8%; top:69.2%; width:14.5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="from_mm_3"
+               style="left:51%; top:69.2%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="from_yy_3"
+               style="left:56.1%; top:69.2%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="to_mm_3"
+               style="left:61.8%; top:69.2%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="to_yy_3"
+               style="left:66.9%; top:69.2%; width:5%; height:3.2%;">
+
+        <input class="field" type="text"
+               name="reason_3"
+               style="left:72.1%; top:69.2%; width:21.8%; height:3.2%;">
+
+
+        <!-- Public Service Condition -->
+
+        <input class="check"
+               type="checkbox"
+               name="previous_public_service_yes"
+               style="left:75%; top:78.4%;">
+
+        <input class="check"
+               type="checkbox"
+               name="previous_public_service_no"
+               style="left:87%; top:78.4%;">
+
+        <input class="field"
+               type="text"
+               name="previous_public_service_condition"
+               style="left:13.5%; top:79.2%; width:58%; height:3%;">
+
+        <input class="field"
+               type="text"
+               name="previous_department_condition"
+               style="left:13.5%; top:82.3%; width:58%; height:3%;">
+
+
+        <!-- =========================
+             REFERENCES
+        ========================== -->
+
+        <input class="field"
+               type="text"
+               name="reference_name_1"
+               style="left:13.5%; top:87.1%; width:24.5%; height:3%;">
+
+        <input class="field"
+               type="text"
+               name="reference_relationship_1"
+               style="left:38.1%; top:87.1%; width:24.5%; height:3%;">
+
+        <input class="field"
+               type="text"
+               name="reference_phone_1"
+               style="left:62.7%; top:87.1%; width:31.2%; height:3%;">
+
+
+        <input class="field"
+               type="text"
+               name="reference_name_2"
+               style="left:13.5%; top:90.5%; width:24.5%; height:3%;">
+
+        <input class="field"
+               type="text"
+               name="reference_relationship_2"
+               style="left:38.1%; top:90.5%; width:24.5%; height:3%;">
+
+        <input class="field"
+               type="text"
+               name="reference_phone_2"
+               style="left:62.7%; top:90.5%; width:31.2%; height:3%;">
+
+
+        <input class="field"
+               type="text"
+               name="reference_name_3"
+               style="left:13.5%; top:93.9%; width:24.5%; height:3%;">
+
+        <input class="field"
+               type="text"
+               name="reference_relationship_3"
+               style="left:38.1%; top:93.9%; width:24.5%; height:3%;">
+
+        <input class="field"
+               type="text"
+               name="reference_phone_3"
+               style="left:62.7%; top:93.9%; width:31.2%; height:3%;">
+
+
+        <!-- Declaration -->
+
+        <input class="field"
+               type="text"
+               name="signature"
+               style="left:13.5%; top:98.3%; width:35%; height:3%;">
+
+        <input class="field"
+               type="text"
+               name="date"
+               placeholder="DD/MM/YYYY"
+               style="left:51%; top:98.3%; width:42.5%; height:3%;">
+
+        <input class="field"
+               type="text"
+               name="initial_page2"
+               style="left:84%; top:99%; width:12%; height:2%;">
+
+    </div>
+
+
+    <!-- BUTTONS -->
+
+    
+
+
+
+
+    <script src="jsapp.js"></script>
+</body>
+</html>
+
+
+

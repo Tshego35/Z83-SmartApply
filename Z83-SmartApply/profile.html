@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Z83 SmartApply</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><span>Z83</span> SmartApply</div>
+        <nav><button class="login-btn" type="button" onclick="window.location.href='index.html'">Back to Home</button></nav>
+    </header>
+
+    <main class="profile-page">
+        <section class="profile-card">
+            <p class="section-label">MY PROFILE</p>
+            <h1>Complete your profile</h1>
+            <p class="profile-intro">Complete these details once. They will be used to fill your Z83 application and tailored CV.</p>
+
+            <form id="profileForm">
+                <h2>Personal Details</h2>
+                <div class="profile-grid">
+                    <label>Full name and surname<input id="fullName" required></label>
+                    <label>ID number<input id="idNumber"></label>
+                    <label>Date of birth<input id="dateOfBirth" type="date"></label>
+                    <label>Passport number<input id="passportNumber"></label>
+                    <label>Citizenship<input id="citizenship" value="South African"></label>
+                    <label>Nationality<input id="nationality"></label>
+                    <label>Race<select id="race"><option value="">Select</option><option>African</option><option>White</option><option>Coloured</option><option>Indian</option><option>Other</option></select></label>
+                    <label>Gender<select id="gender"><option value="">Select</option><option>Female</option><option>Male</option></select></label>
+                    <label>Do you have a disability?<select id="disability"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+                    <label>Valid work permit<select id="workPermit"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+                </div>
+
+                <h2>Contact Details</h2>
+                <div class="profile-grid">
+                    <label>Email address<input id="email" type="email" required></label>
+                    <label>Phone number<input id="phone" type="tel" placeholder="+27 ..."></label>
+                    <label>Preferred language<input id="language" placeholder="English"></label>
+                    <label>Contact method<select id="contactMethod"><option value="">Select</option><option>Post</option><option>E-mail</option><option>Fax</option><option>Telephone</option></select></label>
+                </div>
+                <label>Residential / postal address<textarea id="address" rows="3"></textarea></label>
+
+                <h2>Z83 Declarations</h2>
+                <div class="profile-grid">
+                    <label>Criminal record<select id="criminalRecord"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+                    <label>Pending criminal case<select id="pendingCriminal"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+                    <label>Dismissed for Public Service misconduct<select id="dismissed"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+                    <label>Pending disciplinary case<select id="disciplinary"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+                    <label>Business with the State<select id="stateBusiness"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+                    <label>Private sector experience (years)<input id="privateExperience" type="number" min="0"></label>
+                    <label>Public sector experience (years)<input id="publicExperience" type="number" min="0"></label>
+                    <label>Driver's licence<input id="driversLicence" placeholder="Code 8 / None"></label>
+                </div>
+
+                <h2>Languages</h2>
+                <div class="profile-grid">
+                    <label>Language 1<input id="language1" placeholder="English"></label>
+                    <label>Speak / read level<input id="language1Level" placeholder="Good, Fair or Poor"></label>
+                    <label>Language 2<input id="language2"></label>
+                    <label>Speak / read level<input id="language2Level" placeholder="Good, Fair or Poor"></label>
+                </div>
+
+                <h2>Qualifications and Work Experience</h2>
+                <label>Qualifications<textarea id="qualifications" rows="4" placeholder="Institution | qualification | year obtained"></textarea></label>
+                <label>Work experience<textarea id="experience" rows="5" placeholder="Employer | post held | dates | reason for leaving"></textarea></label>
+                <label>Current study<textarea id="currentStudy" rows="2" placeholder="Institution and qualification, if applicable"></textarea></label>
+
+                <h2>Skills and References</h2>
+                <label>Skills<textarea id="skills" rows="3"></textarea></label>
+                <label>References<textarea id="references" rows="4" placeholder="Name | relationship | telephone number"></textarea></label>
+
+                <button type="submit" class="primary-btn">Save Profile</button>
+                <p id="saveMessage" class="save-message"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="jsapp.js"></script>
+</body>
+</html>

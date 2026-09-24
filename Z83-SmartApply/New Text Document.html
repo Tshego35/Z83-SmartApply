@@ -1,0 +1,864 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z83 - Application for Employment</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: #e5e5e5;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #000;
+        font-size: 10px;
+    }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 10mm auto;
+        padding: 10mm 11mm;
+        background: white;
+        box-shadow: 0 0 5px rgba(0,0,0,.25);
+        position: relative;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 5px;
+    }
+
+    .form-number {
+        font-weight: bold;
+        font-size: 11px;
+    }
+
+    .initial {
+        text-align: right;
+        font-size: 10px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 5px 0 12px;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .instruction {
+        font-size: 8.7px;
+        line-height: 1.25;
+        text-align: justify;
+    }
+
+    .instruction strong {
+        font-size: 9px;
+    }
+
+    .notes {
+        margin-top: 7px;
+    }
+
+    .section-title {
+        background: #d9d9d9;
+        border: 1px solid #000;
+        padding: 4px;
+        font-weight: bold;
+        font-size: 10px;
+        margin-top: 7px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid #000;
+        padding: 3px;
+        vertical-align: top;
+    }
+
+    .label {
+        font-weight: normal;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    textarea,
+    select {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid #555;
+        outline: none;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        padding: 2px;
+        background: transparent;
+    }
+
+    textarea {
+        min-height: 35px;
+        resize: vertical;
+        border: 1px solid #777;
+    }
+
+    .small-input {
+        width: 75px !important;
+        display: inline-block;
+    }
+
+    .medium-input {
+        width: 150px !important;
+        display: inline-block;
+    }
+
+    .checkbox {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    .checkbox input {
+        margin-right: 3px;
+    }
+
+    .question {
+        line-height: 1.3;
+    }
+
+    .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .two-column > div {
+        border: 1px solid #000;
+        padding: 3px;
+    }
+
+    .three-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .three-column > div {
+        border: 1px solid #000;
+        padding: 3px;
+    }
+
+    .page-footer {
+        position: absolute;
+        bottom: 7mm;
+        left: 11mm;
+        right: 11mm;
+        border-top: 1px solid #000;
+        padding-top: 3px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 8px;
+    }
+
+    .page-break {
+        page-break-before: always;
+    }
+
+    .signature {
+        height: 45px;
+    }
+
+    .button-area {
+        text-align: center;
+        margin: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: 0;
+        background: #333;
+        color: white;
+        cursor: pointer;
+        margin: 3px;
+        border-radius: 3px;
+    }
+
+    button:hover {
+        background: #555;
+    }
+
+    @media print {
+        body {
+            background: white;
+        }
+
+        .page {
+            margin: 0;
+            box-shadow: none;
+            width: 210mm;
+            min-height: 297mm;
+        }
+
+        .button-area {
+            display: none;
+        }
+
+        input,
+        textarea,
+        select {
+            border-bottom: 1px solid #000;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ========================= PAGE 1 ========================= -->
+
+<div class="page">
+
+    <div class="header">
+        <div class="form-number">
+            Z83 (81/971431)
+        </div>
+        <div>
+            Page 1 of 2
+            <br><br>
+            Initial: <input class="small-input" type="text">
+        </div>
+    </div>
+
+    <div class="subtitle">
+        WHAT IS THE PURPOSE OF THIS FORM
+    </div>
+
+    <div class="instruction">
+        To assist a government department in selecting a person for an advertised post.
+        This form may be used to identify candidates to be interviewed. You need to fill in
+        all sections of this form completely, accurately and legibly. This will help to
+        process your application fairly.
+    </div>
+
+    <div class="subtitle" style="margin-top:8px;">
+        WHO SHOULD COMPLETE THIS FORM
+    </div>
+
+    <div class="instruction">
+        Only persons wishing to apply for an advertised position in a government department.
+    </div>
+
+    <div class="subtitle" style="margin-top:8px;">
+        ADDITIONAL INFORMATION
+    </div>
+
+    <div class="instruction">
+        This form requires basic information. Candidates who are selected for interviews
+        will be requested to furnish additional certified information that may be required
+        to make a final selection.
+    </div>
+
+    <div class="subtitle" style="margin-top:8px;">
+        SPECIAL NOTES
+    </div>
+
+    <div class="instruction notes">
+        <b>1 –</b> All information will be treated with the strictest confidentiality and
+        will not be disclosed or used for any other purpose than to assess the suitability
+        of a person, except in so far as it may be required and permitted by law.
+        Your personal details must correspond with the details in your ID or passport.
+        <br>
+        <b>2 –</b> Passport number in the case of non South Africans.
+        <br>
+        <b>3 –</b> This information is required to enable the department to comply with
+        the Employment Equity Act, 1998.
+        <br>
+        <b>4 –</b> This information will only be taken into account if it directly relates
+        to the requirements of the position.
+        <br>
+        <b>5 –</b> The Executive Authority shall consider the criminal record(s) against
+        the nature of the job functions in line with internal information security and
+        disciplinary code.
+        <br>
+        <b>6 –</b> The applicant may submit additional information separately where the
+        space provided is not sufficient.
+        <br>
+        <b>7 –</b> Departments must accept certified documents that accompany the
+        application(s) with certification that is up to 6 months, unless the advert
+        prescribes a longer period.
+    </div>
+
+    <!-- SECTION A -->
+
+    <div class="section-title">
+        A. THE ADVERTISED POST (All sections of this form are compulsory)
+    </div>
+
+    <table>
+        <tr>
+            <td width="45%">Position for which you are applying (as advertised)</td>
+            <td><input type="text" name="position"></td>
+        </tr>
+
+        <tr>
+            <td>Department where the position was advertised</td>
+            <td><input type="text" name="department"></td>
+        </tr>
+
+        <tr>
+            <td>Reference number (as stated in the advert)</td>
+            <td><input type="text" name="reference"></td>
+        </tr>
+
+        <tr>
+            <td>
+                If you are offered the position, when can you start OR how much
+                notice must you serve with your current employer?
+            </td>
+            <td><input type="text" name="notice"></td>
+        </tr>
+    </table>
+
+    <!-- SECTION B -->
+
+    <div class="section-title">
+        B. PERSONAL INFORMATION
+    </div>
+
+    <table>
+        <tr>
+            <td width="45%">Surname and Full names</td>
+            <td><input type="text" name="fullname"></td>
+        </tr>
+
+        <tr>
+            <td>Date of Birth DD/MM/YY</td>
+            <td><input type="text" name="dob" placeholder="DD/MM/YY"></td>
+        </tr>
+
+        <tr>
+            <td>Identity Number</td>
+            <td><input type="text" name="idnumber"></td>
+        </tr>
+
+        <tr>
+            <td>Passport number</td>
+            <td><input type="text" name="passport"></td>
+        </tr>
+
+        <tr>
+            <td>Race</td>
+            <td>
+                <label class="checkbox">
+                    <input type="checkbox"> African
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox"> White
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox"> Coloured
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox"> Indian
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox"> Other
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Gender</td>
+            <td>
+                <label class="checkbox">
+                    <input type="checkbox"> Female
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox"> Male
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Do you have a disability?</td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Are you a South African citizen?</td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>If no, what is your nationality?</td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td>Do you have a valid work permit? (only if non-South African)</td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="question">
+                Have you been convicted or found guilty of a criminal offence
+                (including an admission of guilt)? <sup>5</sup>
+                <br>
+                If yes (provide the details)
+            </td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+                <textarea></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Do you have any pending criminal case against you?
+                <br>
+                If yes, (provide the details)<sup>5</sup>
+            </td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+                <textarea></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Have you ever been dismissed for misconduct from the Public Service?<sup>4</sup>
+                <br>
+                If yes (provide the details)<sup>6</sup>
+            </td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+                <textarea></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Do you have any pending disciplinary case against you?
+                <br>
+                If yes, (provide the details)
+            </td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+                <textarea></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Have you resigned from a recent job pending any disciplinary
+                proceeding against you?<sup>4</sup>
+                <br>
+                If yes, please note that the provisions of the Public Service Act shall apply.
+            </td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Have you been discharged or retired from the Public Service on grounds
+                of ill-health or on condition that you cannot be re-employed?<sup>4</sup>
+            </td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Are you conducting business with the State or are you a Director of a
+                Public or Private company conducting business with the State?<sup>6</sup>
+                <br>
+                If yes, provide the details.
+            </td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+                <textarea></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                In the event that you are employed in the Public Service, will you
+                immediately relinquish such business interests?
+            </td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Please specify the total number of years of experience you have</td>
+            <td>
+                Private Sector:
+                <input class="small-input" type="text">
+                &nbsp;&nbsp;
+                Public Sector:
+                <input class="small-input" type="text">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                If your profession or occupation requires official registration,
+                provide date and particulars of registration
+            </td>
+            <td>
+                Date:
+                <input class="medium-input" type="text">
+                <br>
+                Reg. No:
+                <input class="medium-input" type="text">
+            </td>
+        </tr>
+    </table>
+
+    <div class="page-footer">
+        <span>Republic of South Africa</span>
+        <span>APPLICATION FOR EMPLOYMENT</span>
+        <span>G.P.S 81/971431</span>
+        <span>Effective 01 January 2021</span>
+    </div>
+
+</div>
+
+
+<!-- ========================= PAGE 2 ========================= -->
+
+<div class="page page-break">
+
+    <div class="header">
+        <div class="form-number">
+            Z83 (81/971431)
+        </div>
+        <div>
+            Page 2 of 2
+            <br><br>
+            Initial: <input class="small-input" type="text">
+        </div>
+    </div>
+
+    <div class="instruction">
+        <b>8-</b> Each application for employment form must be duly signed and
+        initialed by the applicant. Failure to sign this form may lead to disqualification
+        of the application during the selection process.
+    </div>
+
+    <!-- SECTION C -->
+
+    <div class="section-title">
+        C. CONTACT DETAILS AND MEDIUM OF COMMUNICATIONS
+    </div>
+
+    <table>
+        <tr>
+            <td width="40%">Preferred language for correspondence</td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td>Method for correspondence</td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Post</label>
+                <label class="checkbox"><input type="checkbox"> E-mail</label>
+                <label class="checkbox"><input type="checkbox"> Fax</label>
+                <label class="checkbox"><input type="checkbox"> Tel</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Contact details (in terms of the above)</td>
+            <td>
+                <textarea style="height:55px;"></textarea>
+            </td>
+        </tr>
+    </table>
+
+    <!-- SECTION D -->
+
+    <div class="section-title">
+        D. SOUTH AFRICAN OFFICIAL LANGUAGE PROFICIENCY
+        – state ‘good’, ‘fair’, or ‘poor’
+    </div>
+
+    <table id="languageTable">
+        <tr>
+            <th>Languages (specify)</th>
+            <th>Speak</th>
+            <th>Write or read</th>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text" placeholder="Good / Fair / Poor"></td>
+            <td><input type="text" placeholder="Good / Fair / Poor"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text" placeholder="Good / Fair / Poor"></td>
+            <td><input type="text" placeholder="Good / Fair / Poor"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text" placeholder="Good / Fair / Poor"></td>
+            <td><input type="text" placeholder="Good / Fair / Poor"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text" placeholder="Good / Fair / Poor"></td>
+            <td><input type="text" placeholder="Good / Fair / Poor"></td>
+        </tr>
+    </table>
+
+    <!-- SECTION E -->
+
+    <div class="section-title">
+        E. FORMAL QUALIFICATION<sup>7</sup> (from highest to the lowest)
+    </div>
+
+    <table id="qualificationTable">
+        <tr>
+            <th>Name of School/Technical College</th>
+            <th>Name of qualification obtained</th>
+            <th>Year obtained</th>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td width="40%">Current study (institution and qualification)</td>
+            <td><textarea></textarea></td>
+        </tr>
+    </table>
+
+    <!-- SECTION F -->
+
+    <div class="section-title">
+        F. WORK EXPERIENCE (Also attach a detailed CV)<sup>6</sup>
+    </div>
+
+    <table id="workTable">
+        <tr>
+            <th>Employer (including current employer)</th>
+            <th>Post held</th>
+            <th>From<br>MM YY</th>
+            <th>To<br>MM YY</th>
+            <th>Reason for leaving</th>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td width="55%">
+                If you were previously employed in the Public Service, is there any
+                condition that prevents your re appointment?
+            </td>
+            <td>
+                <label class="checkbox"><input type="checkbox"> Yes</label>
+                <label class="checkbox"><input type="checkbox"> No</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                If yes, provide the name of the previous employing department and
+                indicate the nature of the condition.
+            </td>
+            <td>
+                <textarea></textarea>
+            </td>
+        </tr>
+    </table>
+
+    <!-- SECTION G -->
+
+    <div class="section-title">
+        G. REFERENCES
+    </div>
+
+    <table id="referenceTable">
+        <tr>
+            <th>Name</th>
+            <th>Relationship to you</th>
+            <th>Tel. No. (office hours)</th>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+
+    <!-- DECLARATION -->
+
+    <div class="section-title">
+        DECLARATION
+    </div>
+
+    <div class="instruction" style="border:1px solid #000; padding:5px;">
+        I declare that all the information provided (including any attachments)
+        is complete and correct to the best of my knowledge. I understand that any
+        false information provided will result in my application being disqualified
+        or disciplinary action taken against me if I am appointed.
+    </div>
+
+    <table>
+        <tr>
+            <td width="50%" class="signature">
+                <b>Signature:</b>
+                <input type="text">
+            </td>
+
+            <td class="signature">
+                <b>Date:</b>
+                <input type="text" placeholder="DD/MM/YYYY">
+            </td>
+        </tr>
+    </table>
+
+    <div class="page-footer">
+        <span>Z83 (81/971431)</span>
+        <span>Page 2 of 2</span>
+        <span>APPLICATION FOR EMPLOYMENT</span>
+    </div>
+
+</div>
+
+
+<!-- BUTTONS -->
+
+<div class="button-area">
+    <button onclick="window.print()">Print / Save as PDF</button>
+    <button onclick="clearForm()">Clear Form</button>
+</div>
+
+
+<script>
+function clearForm() {
+    if (confirm("Are you sure you want to clear all entered information?")) {
+        document.querySelectorAll("input, textarea, select").forEach(function(el) {
+            if (el.type === "checkbox" || el.type === "radio") {
+                el.checked = false;
+            } else {
+                el.value = "";
+            }
+        });
+    }
+}
+</script>
+
+</body>
+</html>
+```
